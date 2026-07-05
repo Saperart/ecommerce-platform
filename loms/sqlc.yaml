@@ -1,0 +1,46 @@
+version: "2"
+sql:
+  - engine: "postgresql"
+    queries: "internal/repository/order/postgres/queries.sql"
+    schema: "migrations/migrations"
+    gen:
+      go:
+        package: "sqlc"
+        sql_package: "pgx/v5"
+        out: "internal/repository/order/postgres/sqlc"
+        emit_json_tags: true
+        emit_interface: true
+        omit_unused_structs: true
+  - engine: "postgresql"
+    queries: "internal/repository/stocks/postgres/queries.sql"
+    schema: "migrations/migrations"
+    gen:
+      go:
+        package: "sqlc"
+        sql_package: "pgx/v5"
+        out: "internal/repository/stocks/postgres/sqlc"
+        emit_json_tags: true
+        emit_interface: true
+        omit_unused_structs: true
+  - engine: "postgresql"
+    queries: "internal/repository/product/postgres/queries.sql"
+    schema: "migrations/migrations"
+    gen:
+      go:
+        package: "sqlc"
+        sql_package: "pgx/v5"
+        out: "internal/repository/product/postgres/sqlc"
+        emit_json_tags: true
+        emit_interface: true
+        omit_unused_structs: true
+  - engine: "postgresql"
+    queries: "internal/repository/outbox/postgres/queries.sql"
+    schema: "migrations/migrations"
+    gen:
+      go:
+        package: "sqlc"
+        sql_package: "pgx/v5"
+        out: "internal/repository/outbox/postgres/sqlc"
+        emit_json_tags: true
+        emit_interface: true
+        omit_unused_structs: true
